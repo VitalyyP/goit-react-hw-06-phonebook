@@ -10,13 +10,14 @@ import { data } from './data/data';
 
 function App() {
   const [contacts, setContacts] = useState(
-    () => JSON.parse(localStorage.getItem('contacts')) ?? data,
+    // () => JSON.parse(localStorage.getItem('contacts')) ?? data,
+    [],
   );
   const [filter, setFilter] = useState('');
 
-  useEffect(() => {
-    localStorage.setItem('contacts', JSON.stringify(contacts));
-  }, [contacts]);
+  // useEffect(() => {
+  //   localStorage.setItem('contacts', JSON.stringify(contacts));
+  // }, [contacts]);
 
   const addContact = data => {
     if (contacts.some(contact => contact.name.toLowerCase() === data.name.toLowerCase())) {
