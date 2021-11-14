@@ -28,8 +28,6 @@ const filterReducer = (state = '', { type, payload }) => {
 };
 
 const contactsReducer = combineReducers({
-  // contactReducer,
-  // filterReducer,
   items: contactReducer,
   filter: filterReducer,
 });

@@ -1,5 +1,4 @@
 import { useSelector } from 'react-redux';
-import PropTypes from 'prop-types';
 import Contact from '../Contact';
 
 export default function ContactList() {
@@ -21,8 +20,3 @@ export default function ContactList() {
     </ul>
   );
 }
-
-ContactList.propTypes = {
-  contacts: PropTypes.array,
-  getVisibleContacts: PropTypes.func,
-};

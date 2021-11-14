@@ -1,10 +1,27 @@
-import PropTypes from 'prop-types';
+import { useDispatch, useSelector } from 'react-redux';
 import { useState } from 'react';
 import s from './Form.module.css';
+import { addContactAction } from '../../redux/actions';
 
-export default function Form({ addContact }) {
+export default function Form() {
   const [name, setName] = useState('');
   const [number, setNumber] = useState('');
+
+  const dispatch = useDispatch();
+  const contacts = useSelector(state => state.contacts.items);
+
+  const addContact = data => {
+    if (contacts.some(contact => contact.name.toLowerCase() === data.name.toLowerCase())) {
+      alert(`You have already had ${data.name} in your contacts`);
+      return;
+    }
+    const contact = {
+      id: Date.now(),
+      name: data.name,
+      number: data.number,
+    };
+    dispatch(addContactAction(contact));
+  };
 
   const handleInputChange = event => {
     const { name, value } = event.currentTarget;
@@ -58,7 +75,3 @@ export default function Form({ addContact }) {
     </>
   );
 }
-
-Form.propTypes = {
-  getFormData: PropTypes.func,
-};
