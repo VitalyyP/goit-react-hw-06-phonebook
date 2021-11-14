@@ -41,6 +41,7 @@
     "lint-staged": "^11.2.6",
     "prettier": "^2.4.1",
     "prop-types": "^15.7.2",
+    "react-redux": "^7.2.6",
     "redux": "^4.1.2",
     "redux-devtools-extension": "^2.13.9",
     "shortid": "^2.2.16"

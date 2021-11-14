@@ -1,17 +1,5 @@
-import types from './types';
-import shortid from 'shortid';
+import { ADD, REMOVE, FILTER } from './types';
 
-const addContact = data => ({
-  type: types.ADD,
-  // if (contacts.some(contact => contact.name.toLowerCase() === data.name.toLowerCase())) {
-  //   alert(`You have already had ${data.name} in your contacts`);
-  //   return;
-  // }
-  contact: {
-    id: shortid.generate(),
-    name: data.name,
-    number: data.number,
-  },
-
-  // setContacts([contact, ...contacts]);
-});
+export const addContactAction = payload => ({ type: ADD, payload });
+export const removeContactAction = payload => ({ type: REMOVE, payload });
+export const filterContactAction = payload => ({ type: FILTER, payload });

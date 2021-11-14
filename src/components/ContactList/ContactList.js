@@ -1,11 +1,11 @@
 import PropTypes from 'prop-types';
 import Contact from '../Contact';
 
-export default function ContactList({ getVisibleContacts, deleteContact }) {
+export default function ContactList({ getVisibleContacts }) {
   return (
     <ul>
       {getVisibleContacts().map(contact => (
-        <Contact key={contact.id} contact={contact} deleteContact={deleteContact} />
+        <Contact key={contact.id} contact={contact} />
       ))}
     </ul>
   );
@@ -14,5 +14,4 @@ export default function ContactList({ getVisibleContacts, deleteContact }) {
 ContactList.propTypes = {
   contacts: PropTypes.array,
   getVisibleContacts: PropTypes.func,
-  deleteContact: PropTypes.func,
 };
