@@ -20,7 +20,7 @@ const contactReducer = (state = initialState, { type, payload }) => {
 const filterReducer = (state = '', { type, payload }) => {
   switch (type) {
     case FILTER:
-      return;
+      return payload;
 
     default:
       return state;

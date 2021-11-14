@@ -1,4 +1,4 @@
-import { useState } from 'react';
+// import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import s from './App.module.css';
 import Form from './components/Form';
@@ -24,28 +24,15 @@ function App() {
     dispatch(addContactAction(contact));
   };
 
-  const [filter, setFilter] = useState('');
-
-  const handleInputChange = event => {
-    const { value } = event.currentTarget;
-    setFilter(value);
-  };
-
-  const getVisibleContacts = () => {
-    const normalizedFilter = filter.toLowerCase();
-    const visibleContacts = contacts.filter(contact =>
-      contact.name.toLowerCase().includes(normalizedFilter),
-    );
-    return visibleContacts;
-  };
+  // const [filter, setFilter] = useState('');
 
   return (
     <Container>
       <h1>Phonebook</h1>
       <Form addContact={addContact} />
       <h2 className={s.contactsTitle}>Contacts</h2>
-      <Filter value={filter} onChange={handleInputChange} />
-      <ContactList contacts={contacts} getVisibleContacts={getVisibleContacts} />
+      <Filter />
+      <ContactList />
     </Container>
   );
 }
