@@ -1,4 +1,5 @@
-export const ADD = 'addContact';
-export const REMOVE = 'removeContact';
-export const SET = 'setContacts';
-export const FILTER = 'handleInputChange';
+//------------------- Without Redux Toolkit--------------------------
+
+// export const ADD = 'addContact';
+// export const REMOVE = 'removeContact';
+// export const FILTER = 'handleInputChange';
