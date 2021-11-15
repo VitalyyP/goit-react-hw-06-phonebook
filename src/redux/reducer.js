@@ -1,24 +1,16 @@
-import { combineReducers } from 'redux';
 import { createReducer } from '@reduxjs/toolkit';
 import { data } from '../data/data';
 
 const initialState = [...data];
 
-const contactReducer = createReducer(initialState, {
+export const contactReducer = createReducer(initialState, {
   addContact: (state, { payload }) => [...state, payload],
   removeContact: (state, { payload }) => state.filter(contact => contact.id !== payload),
 });
 
-const filterReducer = createReducer('', {
+export const filterReducer = createReducer('', {
   handleInputChange: (_, { payload }) => payload,
 });
-
-const contactsAllReducer = combineReducers({
-  items: contactReducer,
-  filter: filterReducer,
-});
-
-export default contactsAllReducer;
 
 //------------------- Without Redux Toolkit--------------------------
 
